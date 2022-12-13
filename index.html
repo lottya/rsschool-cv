@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>CV-Valeria Donskih</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <ul class="header__list">
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#contacts">Contacts</a></li>
+          <li><a href="#skills">Skills</a> </li>
+          <li><a href="#code">Code Examples</a></li>
+          <li><a href="#work">Work Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#lang">Languages</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="container flex-el">
+    <div class="left-side">
+      <img src="my-photo.jpg" class="left-side__photo" alt="Valeria Donskih">
+      <section>
+        <h2 id="contacts">My Contacts Info</h2>
+        <ul>
+          <li>Phone: <a href="tel:+375445424197">+375 (44) 542-41-97</a></li>
+          <li>E-mail: <a href="mailto:lottya2016@gmail.com">lottya2016@gmail.com</a></li>
+          <li>GitHub: Valeria Donskih <a href="https://github.com/lottya/">@Lottya</a></li>
+          <li>Telegram: <a href="https://t.me/valeridondon">Valeria Donskih</a></li>
+          <li>Discord: Leriys(@Lottya)#7822</li>
+        </ul>
+      </section>
+      <section>
+        <h2 id="skills">My Skills</h2>
+        <ul>
+          <li>HTML</li>
+          <li>CSS (Bootstrap, Preprocessor SCSS/SASS, BEM methodology)</li>
+          <li>JavaScript</li>
+          <li>JSON-LD (JavaScript Object Notation for Linked Data)</li>
+          <li>Gulp (gulp.js)</li>
+          <li>Layout of HTML-letters</li>
+          <li>Figma (for web development)</li>
+          <li>GitLab/GitHub</li>
+        </ul>
+      </section>
+      <section>
+        <h2 id="lang">Languages</h2>
+        <ul>
+          <li>Russian - native speaker</li>
+          <li>English - A2</li>
+        </ul>
+      </section>
+    </div>
+    <div class="right-side">
+      <section>
+        <h1>Valeria Donskih</h1>
+        <p>I work in SEO. I'm studying front-end developer!</p>
+      </section>
+      <section>
+        <h2 id="about">About Me</h2>
+        <p>I'm 19 years old. At the moment I work as an SEO specialist in an IT agency WEB-sphere, but I'm interested in developing in the direction of front-end development.</p>
+        <p>My goal is to improve my skills and learn new things, gain valuable experience.</p>
+        <h3>My strengths</h3> 
+        <ul>
+          <li>Purposefulness</li>
+          <li>Responsibility</li>
+          <li>Diligence</li>
+          <li>I quickly understand the essence of the problem, I begin to come up with solutions</li>
+        </ul>
+      </section>
+      <section>
+        <h2 id="education">Education</h2>
+          <h3>Public Education</h3>
+          <ul>
+            <li>State educational institution "Secondary school No. 76 of Minsk</li>
+            <li>Junior Sister of Mercy (4 ranks)</li>
+          </ul>
+          <h3>Skillbox</h3>
+          <p>I mastered the knowledge of HTML markup of a document, CSS styles and styles for adaptive layout of the page for mobile devices, basic JS skills (hang a "click" event processing on an element, dynamically change the content of an HTML element, etc.)</p>
+          <p>I acquired the basic knowledge and skills related to layout in online courses from the Skill Box platform "<a href="https://skillbox.ru/course/webdev/">Web developer from scratch to PRO</a>.</p>
+      </section>
+      <section>
+        <h2 id="code">Code Examples</h2>
+        <p>An example of to do list with the ability to add new tasks and delete them</p>
+        <p>JS script first, then HTML markup:</p>
+        <code>
+            let list = document.querySelector('.list'); 
+            let item = document.querySelectorAll('.item');
+            let btn = document.querySelector('.btn');
+            let input = document.querySelector('.input'); 
+            let closeBtn = document.querySelectorAll('.btn-close');
+            input.addEventListener('keyup', function() {if (input.value === "") {btn.disabled = true;} else {btn.disabled = false;}})
+            
+              
+            
+            btn.addEventListener('click', function (ev) {
+            let inputValue = input.value;
+            let newItem = document.createElement('li');
+            newItem.classList.add('item');
+            newItem.textContent = inputValue;
+            let newBtnClose = document.createElement('button');
+            newBtnClose.classList.add('btn-close');
+            newBtnClose.textContent = "X"
+            if (newItem.textContent === "") {// alert('Ничего не введено');} else {list.appendChild(newItem);input.value = "";btn.disabled = true;newItem.appendChild(newBtnClose);}})
+            list.addEventListener('click', function(ev) {if(ev.target.tagName === 'LI') {ev.target.classList.toggle('done');}})
+            
+            list.onclick = function(del) {const btnClose = del.target.closest('.btn-close');if (!btnClose) {return;}btnClose.parentElement.remove();}
+        </code>
+        <p>The second part of the HTML markup example with the "To-Do List" in action:</p>
+        <div class="done-code">
+          <h3 class="list-title">Tasks list</h3>
+          <ol class="list">
+            <li class="item">Task №1
+              <button class="btn-close">X</button>
+            </li>
+            <li class="item">Task №2
+              <button class="btn-close">X</button>
+            </li>
+            <li class="item">Task №3
+              <button class="btn-close">X</button>
+            </li>
+          </ol>
+          <div class="box">
+            <input type="text" class="input" placeholder="Enter a task">
+            <button class="btn" disabled>Add Task</button>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2 id="work">Work Experience</h2>
+        <p>Now my specialty is SEO (Search Engine Optimizer). In the process of working with sites, there are tasks related to the layout of pages or their refinement.</p>
+        <p>I can work in such SMCs as:</p>
+        <ul>
+          <li>Bitrix</li>
+          <li>WP (wordpress)</li>
+          <li>MODx</li>
+        </ul>
+        <h3>Finished project</h3>
+        I am attaching a link to the code of my graduation project "<a href="https://github.com/lottya/blanchard">Blanchard</a> on GitHub
+      </section>
+    </div>
+  </main>
+  <footer>
+    <div class="container footer">
+      <div class="footer-left">
+        <a href="https://github.com/lottya">@Lottya on GitHub</a> © 2022
+      </div>
+      <div class="footer-right">
+      <a href="https://rs.school/js-stage0/">JavaScript/Front-end Stage 0</a>
+      <img class="footer-logo" src="rs_school_logo.svg" alt="logo RS School">
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
